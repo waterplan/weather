@@ -1,14 +1,16 @@
-package com.micro.weather.city.eureka;
+package com.mirco.weather.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class CityEurekaApplication {
-
+@EnableZuulProxy
+public class ZuulApplication {
+	
 	public static void main(String[] args) {
-		SpringApplication.run(CityEurekaApplication.class, args);
+		SpringApplication.run(ZuulApplication.class, args);
 	}
 }
