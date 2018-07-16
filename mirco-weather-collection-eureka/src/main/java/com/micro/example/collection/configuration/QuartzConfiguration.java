@@ -28,7 +28,7 @@ public class QuartzConfiguration {
 	
 	public void startJob() throws SchedulerException {
 		JobDetail jobDetail = JobBuilder.newJob(WeatherDataSyncJob.class).build();
-		CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule("0 0/50 * * * ?");
+		CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule("0 */50 * * * ?");
 		CronTrigger cronTrigger = TriggerBuilder.newTrigger()
 				.withSchedule(scheduleBuilder).build();
 	     scheduler().scheduleJob(jobDetail, cronTrigger);

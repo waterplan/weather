@@ -12,15 +12,13 @@ public class WeatherReportServiceImpl implements WeatherReportService{
 
 	
 	@Autowired
-	private WeatherDataService weatherDataService;
+	private DataCilent dataCilent;
 	
 	@Override
-	public Weather getDataByCityName(String name) {
+	public WeatherResponse getDataByCityName(String name) {
 		// TODO Auto-generated method stub
-		Weather data = null;
-		WeatherResponse weather = weatherDataService.getWeatherByCityName(name);
-		data = weather.getData();
-		return data;
+		WeatherResponse weather = dataCilent.getWeatherByCityName(name);
+		return weather;
 	}
 
 }

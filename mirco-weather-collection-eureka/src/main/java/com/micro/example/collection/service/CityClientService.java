@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.micro.example.collection.vo.City;
 
-@FeignClient(value="mirco-weather-city-eureka")
+@FeignClient(value="mirco-weather-zuul")
 public interface CityClientService {
 	
-	@GetMapping(value="cities")
+	@GetMapping(value="city/cities")
 	List<City> cityList();
 
 }

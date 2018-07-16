@@ -78,13 +78,6 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>23.0</version>
-		</dependency>
 			
 		</dependencies>
 	</dependencyManagement>
@@ -105,5 +98,6 @@
     <module>mirco-weather-data-eureka</module>
     <module>micro-weather-eureka</module>
     <module>mirco-weather-report-eureka</module>
+    <module>mirco-weather-zuul</module>
   </modules>
 </project>

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mirco.weather.report.eureka.service.CityClient;
+import com.mirco.weather.report.eureka.service.DataCilent;
 import com.mirco.weather.report.eureka.service.WeatherReportService;
 import com.mirco.weather.report.eureka.vo.City;
 
@@ -27,16 +27,17 @@ public class WeatherReportController {
 	private WeatherReportService weatherReportService;
 	
 	@Autowired
-	private CityClient cityCient;
+	private DataCilent dataCilent;
 	
 	@GetMapping("/cityName/{cityName}")
 	public ModelAndView getReportByCityName(@PathVariable("cityName") String cityName, Model model) throws Exception{
 	List<City> cityList = null;
+	LOG.info("getReportByCityName method  param :{}",cityName);
 		try {
 			// TODO 改为由城市数据API微服务提供数据
-			cityList = cityCient.listCity();
+			cityList = dataCilent.listCity();
 		} catch (Exception e) {
-			LOG.error("Exception!", e);
+			LOG.error("getReportByCityName Exception!", e);
 		}
 		model.addAttribute("title", "老卫的天气预报");
 		model.addAttribute("cityName", cityName);
