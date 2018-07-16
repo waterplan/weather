@@ -2,6 +2,8 @@ package com.mirco.weather.data.eureka.vo;
 
 import java.io.Serializable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 public class WeatherResponse implements Serializable{
 
 	private static final long serialVersionUID=1L;
@@ -85,6 +87,10 @@ public class WeatherResponse implements Serializable{
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return ToStringBuilder.reflectionToString(this);
+	}
 	
 }

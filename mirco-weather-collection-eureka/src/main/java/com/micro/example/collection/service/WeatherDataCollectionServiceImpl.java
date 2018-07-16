@@ -24,7 +24,7 @@ public class WeatherDataCollectionServiceImpl implements WeatherDataCollectionSe
 	@Override
 	public void syncDateByCityName(String CityName) {
 		// TODO Auto-generated method stub
-		String uri = WEATHER_URI+"cityName="+CityName;
+		String uri = WEATHER_URI+"city="+CityName;
 		saveWeatherData(uri);
 	}
 	

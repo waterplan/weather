@@ -32,10 +32,10 @@ public class WeatherDataServiceImpl implements WeatherDataService {
 	}
 
 	@Override
-	public WeatherResponse getDataByCityName(String cityName) {
+	public WeatherResponse getDataByCityName(String cityName) throws JsonParseException, JsonMappingException, IOException {
 		// TODO Auto-generated method stub
-		String uri = WEATHER_URI+"cityName="+cityName;
-		return null;
+		String uri = WEATHER_URI+"city="+cityName;
+		return doGetWeahter(uri);
 	}
 	
 	public WeatherResponse doGetWeahter(String uri) throws JsonParseException, JsonMappingException, IOException {
