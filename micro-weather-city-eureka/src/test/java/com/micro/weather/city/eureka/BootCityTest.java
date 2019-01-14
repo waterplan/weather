@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.micro.weather.city.eureka.domain.City;
 import com.micro.weather.city.eureka.service.CityDataService;
-import com.micro.weather.city.eureka.vo.City;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
